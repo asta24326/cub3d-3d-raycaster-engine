@@ -4,7 +4,7 @@
 
 A 1992-style 3D raycaster game engine built entirely from scratch in C, inspired by the legendary *Wolfenstein 3D*. This project explores computer graphics, mathematical projections, custom parsing, and rigorous memory/error management in low-level systems programming.
 
-[![Watch the Gameplay](https://drive.google.com/uc?export=view&id=12ycG6bhVXJ2aLWpXIk_j1kpVuZOnxB03)](https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing)
+[![ CLICK ON THE SCREENSHOT AND WATCH THE GAMEPLAY](https://drive.google.com/uc?export=view&id=12ycG6bhVXJ2aLWpXIk_j1kpVuZOnxB03)](https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing)
 
 
 ## 🚀 Features
