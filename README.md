@@ -1,71 +1,153 @@
-# cub3D
+# 🎮 cub3D — 3D Raycaster Game Engine in C
 
-*This project has been created as part of the 42 curriculum by `lorlov` and `asharafe`.*
+A 1992-style 3D raycaster game engine built entirely from scratch in C, inspired by the legendary *Wolfenstein 3D*. Developed as part of the 42 School curriculum by [Aidar Sharafeev](https://github.com/asta24326) and [lorlov](https://github.com/lorlov).
 
-### ✅ Result: 122/100
+![Score](https://img.shields.io/badge/Score-122%2F100-brightgreen?style=for-the-badge)
+![C Language](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![42 Berlin](https://img.shields.io/badge/42-Berlin-000000?style=for-the-badge&logo=42&logoColor=white)
+![MiniLibX](https://img.shields.io/badge/Library-MiniLibX-orange?style=for-the-badge)
+![Valgrind](https://img.shields.io/badge/Valgrind-Leak%20Free-brightgreen?style=for-the-badge)
 
-A 1992-style 3D raycaster game engine built entirely from scratch in C, inspired by the legendary *Wolfenstein 3D*. This project explores computer graphics, mathematical projections, custom parsing, and rigorous memory/error management in low-level systems programming.
+## 🎬 Gameplay Video
 
-[![ CLICK ON THE SCREENSHOT AND WATCH THE GAMEPLAY](https://drive.google.com/uc?export=view&id=12ycG6bhVXJ2aLWpXIk_j1kpVuZOnxB03)](https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing)
+[![Watch Gameplay](https://img.shields.io/badge/Click%20Here%20to%20Watch-Full%20Gameplay-red?style=for-the-badge)](https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing)
 
-CLICK ON THE SCREENSHOT AND WATCH THE GAMEPLAY
+## 🚀 Key Features
 
-## 🚀 Features
+- **Real-Time Raycasting Engine:** Renders a 3D perspective from a 2D grid map using the DDA (Digital Differential Analysis) algorithm.
+- **Directional Texture Mapping:** Wall textures dynamically change depending on compass orientation (North, South, East, West).
+- **Defensive Map Parsing:** Validates `.cub` map integrity, checks wall enclosures, verifies color ranges, and prevents memory leaks on invalid inputs.
+- **Smooth Controls & Collision:** Handles continuous multi-key movement, camera rotation, and wall collision detection without clipping.
 
-* **Real-Time Raycasting:** Renders a fluid 3D perspective from a 2D grid map using the DDA (Digital Differential Analysis) algorithm.
-* **Texture Mapping:** Wall textures change dynamically based on the compass direction (North, South, East, West) the player is facing.
-* **Custom Map Parser:** Validates map configurations, checks for wall enclosures, prevents leaks, and handles unexpected or duplicate layout elements gracefully.
-* **Fluid Controls:** Smooth player movement, rotation, and wall collision detection to ensure smooth navigation without clipping.
+## 📦 Built With
 
-## 🧠 What I Learned
+- **C** — Core language
+- **MiniLibX** — X11 / AppKit graphics interface
+- **GCC** — Compiler
+- **Make** — Build automation
+- **Valgrind** — Memory leak detection and analysis
 
-Building a raycaster from the ground up shifts your perspective from *using* tools to *engineering* them. This project deepened my understanding of several core computer science and engineering concepts:
+## 🚦 Running the Project
 
-* **Applied Linear Algebra & Trigonometry:** Translating abstract vectors, camera planes, and ray-intersection angles into pixel-by-pixel rendering matrix manipulation.
-* **Algorithmic Efficiency:** Implementing the **DDA (Digital Differential Analysis)** algorithm to optimize ray-stepping, minimizing calculation cycles per vertical line to maintain a high, fluid frame rate.
-* **Defensive Resource Management:** Handling deep memory allocations for textures, parsed map structures, and window contexts in C. Every single pointer allocation is tracked and freed, ensuring 100% leak-free exits on both clean shutdowns and unexpected parsing errors.
-* **State Machine Design:** Managing player inputs, real-time camera transformations, and screen rendering smoothly within a unified game loop without blocking the main execution thread.
-
-## 💎 Key Value of This Project
-
-The true value of `cub3D` isn't just about making a nostalgic game—it's a rigorous exercise in software architecture and hardware constraints.
-
-1. **Bridging the Gap Between 2D and 3D:** It demonstrates how complex, multi-dimensional visual experiences can be engineered using simple 2D arrays and fundamental geometry, without relying on heavy modern graphics APIs like OpenGL, DirectX, or Vulkan.
-2. **Data Integrity & Robust Parsing:** Writing a custom parser that reads, validates, and sanitizes unstructured configuration files (`.cub`) teaches how to handle unpredictable user data safely—a critical skill for building secure, production-grade applications in any language.
-3. **Optimizing Under Constraints:** Working with the minimal graphical capabilities of the MiniLibX library forces highly optimized code. When you only have the power to push individual pixel colors directly to an image buffer, your engine logic has to be clean, lean, and intentional.
-
-## 🛠️ Technical Challenges & Architecture
-
-### Raycasting Mechanics
-The core engine projects 2D grid data into a 3D field of view by calculating individual ray vectors for every vertical column of the screen. To prevent the "fish-eye" distortion effect, the distance to the wall is mathematically corrected relative to the camera plane vector rather than the player's single coordinate point.
-
-### Parsing & Edge-Case Validation
-A major focus of this project is defensive programming. The custom configuration parser ensures:
-* The map layout is fully enclosed by walls (`1`). Any open paths to outer space throw a precise error.
-* Exactly one starting position (`N`, `S`, `E`, or `W`) is defined.
-* Texture paths and floor/ceiling RGB colors are structurally valid and verified accessible before launching any graphical window context.
-
-## 📦 Installation & Setup
-
-### Prerequisites
-* GCC or Clang compiler
-* MiniLibX library dependencies (X11 / AppKit depending on your operating system environment)
-
-### Building the Project
-Clone the repository and compile using the provided Makefile:
+### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/yourusername/cub3D.git](https://github.com/yourusername/cub3D.git)
+git clone https://github.com/asta24326/cub3D.git
 cd cub3D
+```
+
+### 2. Build the Project
+
+```bash
 make
-🎮 How to Play
-Run the executable with a valid .cub map configuration file as an argument:
+```
 
-Bash
+### 3. Launch the Game
+
+```bash
 ./cub3D maps/valid_map.cub
-Controls
-W A S D — Move forward, backward, and strafe left/right
+```
 
-Left / Right Arrow Keys — Rotate the camera view panorama
+### Controls
 
-ESC or clicking the window close button — Exit the game cleanly, freeing all system allocations
+| Key | Action |
+|-----|--------|
+| **W** | Move forward |
+| **A** | Strafe left |
+| **S** | Move backward |
+| **D** | Strafe right |
+| **← / →** | Rotate camera left/right |
+| **ESC** | Exit cleanly (zero memory leaks) |
+| **Close Button** | Exit cleanly |
+
+## 📍 The Process
+
+We approached cub3D as a low-level graphics and systems architecture challenge. Rather than using external 3D frameworks, we translated 2D coordinates into 3D projections manually.
+
+### Architecture Overview
+
+We split the engineering process into two core components:
+
+1. **Custom Parser** — Validates and sanitizes raw configuration files
+   - Verifies map boundaries and wall enclosure
+   - Validates color and texture specifications
+   - Prevents memory leaks on invalid inputs
+
+2. **Rendering Engine** — Math-heavy 3D projection system
+   - Applies DDA algorithm to step through the grid per screen column
+   - Minimizes rendering math cycles
+   - Applies fish-eye lens correction relative to player camera plane
+
+By applying the DDA algorithm to trace rays for each screen column, we achieved efficient rendering without modern GPU acceleration while maintaining consistent frame rates.
+
+## 🧠 What I Learned & Overall Growth
+
+### Applied Linear Algebra & Graphics
+- Mastered vector projections and camera plane mathematics
+- Calculated delta distances and applied matrix transformations
+- Successfully mapped 2D arrays to 3D field-of-view rendering
+
+### Performance Optimization
+- Leveraged the DDA algorithm for high frame rates
+- Optimized for execution without GPU hardware acceleration
+- Balanced mathematical complexity with real-time performance demands
+
+### Defensive Parsing & Resource Tracking
+- Built strict validation for user configuration files
+- Ensured all pointers, texture surfaces, and window contexts clean up perfectly on error or exit
+- Implemented comprehensive error handling throughout the application lifecycle
+
+### State Engine Management
+- Coordinated user inputs with frame rendering
+- Integrated window event hooks inside an asynchronous event loop
+- Managed continuous multi-key input states without conflicts
+
+## 💡 How It Can Be Improved
+
+### Textured Floors & Ceilings
+- Implement raycasted horizontal plane rendering
+- Add floor and ceiling texture support for immersive environment coverage
+
+### Interactive Map Elements
+- Add dynamic doors with open/close mechanics
+- Implement collectible items and pickups
+- Introduce ambient lighting and shadow attenuation for atmosphere
+
+### Sprite Rendering
+- Implement billboarded 2D sprites for realistic scaling
+- Add depth buffering for proper z-ordering
+- Support for enemies and dynamic environment objects
+
+### Mouse Look
+- Integrate continuous mouse cursor tracking
+- Implement smoother first-person camera panning
+- Add mouse sensitivity adjustments
+
+### Advanced Features
+- Implement minimap display for player orientation
+- Add particle effects (explosions, impacts)
+- Support for multiple weapon animations
+- Network multiplayer capabilities
+
+## 📊 Project Statistics
+
+- **Score:** 122/100 (with bonuses)
+- **Memory:** Completely leak-free (verified with Valgrind)
+- **Language:** Pure C with no external 3D libraries
+- **Development Time:** Completed within 42 School project timeline
+- **Collaborators:** Aidar Sharafeev & lorlov
+
+## 🔗 Related Resources
+
+- [42 School Curriculum](https://42.fr/en/homepage/)
+- [Raycasting Explained](https://en.wikipedia.org/wiki/Raycasting)
+- [DDA Algorithm](https://en.wikipedia.org/wiki/Digital_differential_analyzer)
+- [Wolfenstein 3D — The Game That Started It All](https://en.wikipedia.org/wiki/Wolfenstein_3D)
+
+## 📝 License
+
+This project is part of the 42 School curriculum. Please refer to the [42 School's subject PDF](https://github.com/asta24326/cub3D) for licensing and usage guidelines.
+
+---
+
+**Built with ❤️ at 42 Berlin**
