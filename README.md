@@ -10,7 +10,7 @@ A 1992-style 3D raycaster game engine built entirely from scratch in C, inspired
 
 ## 🎬 Gameplay Video
 
-[![Watch Gameplay](https://img.shields.io/badge/Click%20Here%20to%20Watch-Full%20Gameplay-red?style=for-the-badge)](https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing)
+[![Watch Gameplay](https://img.shields.io/badge/Click%20Here%20to%20Watch-Full%20Gameplay-red?style=for-the-badge)]([https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing](https://drive.google.com/file/d/12ycG6bhVXJ2aLWpXIk_j1kpVuZOnxB03/view?usp=drive_link))
 
 ## 🚀 Key Features
 
