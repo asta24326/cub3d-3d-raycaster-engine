@@ -8,9 +8,9 @@ A 1992-style 3D raycaster game engine built entirely from scratch in C, inspired
 ![MiniLibX](https://img.shields.io/badge/Library-MiniLibX-orange?style=for-the-badge)
 ![Valgrind](https://img.shields.io/badge/Valgrind-Leak%20Free-brightgreen?style=for-the-badge)
 
-## 🎬 Gameplay Video
+## 🎬 Gameplay Screenshot
 
-[![Watch Gameplay](https://img.shields.io/badge/Click%20Here%20to%20Watch-Full%20Gameplay-red?style=for-the-badge)]([https://drive.google.com/file/d/1XL65deVnCVVKG8h0_fHqrtP-BpfuXj8D/view?usp=sharing](https://drive.google.com/file/d/12ycG6bhVXJ2aLWpXIk_j1kpVuZOnxB03/view?usp=drive_link))
+![cub3D Raycaster Engine](https://drive.google.com/uc?export=view&id=12ycG6bhVXJ2aLWpXIk_j1kpVuZOnxB03)
 
 ## 🚀 Key Features
 
